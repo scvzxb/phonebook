@@ -21,25 +21,26 @@ typedef struct __PHONE_BOOK_ENTRY {
 
 typedef struct _LAST_NAME {
     char lastName[MAX_LAST_NAME_SIZE];
-    struct __PHONE_BOOK_ENTRY *detail;
+    entry_other *detail;
     struct _LAST_NAME *pNext;
 } entry;
 
-entry *findName(char lastname[], entry *pHead);
-entry *append(char lastName[], entry *e);
+// entry *findName(char lastname[], entry *pHead);
+// entry *append(char lastName[], entry *e);
 
-// /*version2*/
+/*version2*/
 
-// typedef unsigned int hashIndex;
-// typedef struct _PHONEBOOK_HASH_TABLE {
-//     entry **list;
-//     unsigned int tableSize;
-// } hashTable;
+typedef unsigned int hashIndex;
 
-// hashTable *hashInitial(int tableSize);
-// hashIndex hash(char *key);
+typedef struct _PHONEBOOK_HASH_TABLE{
+    entry **list;
+    unsigned int tableSize;
+}hashTable;
 
-// entry *hashFindName(char *key, hashTable *ht);
-// int hashAppend(char *key, hashTable *ht);
+hashTable *hashInitial();
+hashIndex hash(char *key);
+
+entry *hashFindName(char *key,hashTable *ht);
+int hashappend(char *key, hashTable *ht);
 
 #endif
