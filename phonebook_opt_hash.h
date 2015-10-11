@@ -32,10 +32,10 @@ typedef struct _LAST_NAME {
 
 typedef unsigned int hashIndex;
 
-typedef struct _PHONEBOOK_HASH_TABLE{
+typedef struct _PHONEBOOK_HASH_TABLE {
     entry **list;
     unsigned int tableSize;
-}hashTable;
+} hashTable;
 
 hashTable *hashInitial();
 hashIndex hash(char *key);
