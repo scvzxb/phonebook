@@ -17,29 +17,14 @@ typedef struct __PHONE_BOOK_ENTRY {
     char state[2];
     char zip[5];
     struct __PHONE_BOOK_ENTRY *pNext;
-} entry_other;
+} entry_detail;
 
 typedef struct _LAST_NAME {
     char lastName[MAX_LAST_NAME_SIZE];
-    struct __PHONE_BOOK_ENTRY *detail;
+    entry_detail *pDetail;
     struct _LAST_NAME *pNext;
 } entry;
-
 entry *findName(char lastname[], entry *pHead);
 entry *append(char lastName[], entry *e);
-
-// /*version2*/
-
-// typedef unsigned int hashIndex;
-// typedef struct _PHONEBOOK_HASH_TABLE {
-//     entry **list;
-//     unsigned int tableSize;
-// } hashTable;
-
-// hashTable *hashInitial(int tableSize);
-// hashIndex hash(char *key);
-
-// entry *hashFindName(char *key, hashTable *ht);
-// int hashAppend(char *key, hashTable *ht);
 
 #endif

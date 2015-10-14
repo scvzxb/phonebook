@@ -5,30 +5,7 @@
 
 #include "phonebook_opt_hash.h"
 
-/* version1 */
-// entry *findName(char lastname[], entry *pHead)
-// {
-// 	while (pHead != NULL) {
-// 		if (strcasecmp(lastname, pHead->lastName) == 0)
-// 			return pHead;
-// 		pHead = pHead->pNext;
-// 	}
-// 	return NULL;
-// }
-
-// entry *append(char lastName[], entry *e)
-// {
-// 	e->pNext = (entry *) malloc(sizeof(entry));
-// 	e = e->pNext;
-// 	strcpy(e->lastName, lastName);
-// 	e->pNext = NULL;
-// 	return e;
-// }
-
-/* version2*/
-
 /*hash function*/
-
 hashTable *hashInitial()
 {
     hashTable *ht = NULL;
@@ -69,11 +46,9 @@ entry *hashFindName(char *key, hashTable *ht)
     e = ht->list[hash(key)];
     while (e->pNext != NULL) {
         if (strcasecmp(key, e->lastName) == 0) {
-            printf("find %s\n", key);
             return NULL;
         }
         e = e->pNext;
     }
-    printf("XXXX");
     return 0;
 }

@@ -24,28 +24,3 @@ entry *append(char lastName[], entry *e)
     e->pNext = NULL;
     return e;
 }
-
-// /* version2*/
-
-// /*hash function*/
-
-// hashTable *hashInitial() {
-// 	hashTable *ht = NULL;
-// 	ht = (hashTable *)malloc(sizeof(hashTable));
-// 	ht->list = (entry **)malloc(sizeof(entry *)*sizeTable);
-
-// 	return ht;
-// }
-
-// hashf function
-// hashIndex hash(char *key) {
-// 	unsigned int hashVal = 0;
-// 	while (*key != '\0') {
-// 		hashVal = (hashVal << 5) + *key++;
-// 	}
-// 	return hashVal % sizeTable;
-// }
-
-// int *hashpaaend(char *key, unsigned int hashVal) {
-
-// }
